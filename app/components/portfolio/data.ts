@@ -4,12 +4,13 @@ import type { Profile, Project } from "./types";
 export const CATEGORIES = ["Все", "Свадебные", "Вечерние", "Повседневные", "Сценические", "Эскизы", "Стразы"];
 
 export const profile: Profile = {
-  name: "Нурзат Рыспаева",
+  name: "Mellsan",
   title: "Художник-дизайнер · Эскизист · Индивидуальный пошив",
   location: "Бишкек, Кыргызстан",
   email: "nurzat.ryspaeva12@gmail.com",
   phone: "+996 776 068 583",
   instagram: "mellsan_12",
+  resumeUrl: "/resume/MELLSAN_Resume.pdf",
   about:
     "Художник-дизайнер с профильным образованием (КРСУ, 2023) и опытом 2,5 года в индивидуальном пошиве (Atelier Adonn). Специализируюсь на разработке художественных эскизов, технических рисунков и декоративной отделке изделий, включая ручную вышивку стразами. Отлично разбираюсь в тканях, их свойствах и применении в пошиве.",
   specialties: [
@@ -18,6 +19,7 @@ export const profile: Profile = {
     { icon: Gem, label: "Вышивка стразами" },
     { icon: Sparkles, label: "Финишная отделка" },
   ],
+  
 };
 
 export const projects: Project[] = [

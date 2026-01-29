@@ -15,6 +15,7 @@ export type Profile = {
   email: string;
   phone: string;
   instagram: string;
+  resumeUrl?: string;
   about: string;
   specialties: { icon: any; label: string }[];
 };

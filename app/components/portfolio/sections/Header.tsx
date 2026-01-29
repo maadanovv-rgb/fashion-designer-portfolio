@@ -20,6 +20,7 @@ export function Header({ profile }: { profile: Profile }) {
         </div>
 
         <div className="flex flex-wrap gap-2">
+
           <Button variant="secondary" className="rounded-2xl bg-[#E3E8D9] text-[#2F3A2E] hover:bg-[#D6DDC8]" asChild>
             <a href={`mailto:${profile.email}`}>
               <Mail className="mr-2 h-4 w-4" />
@@ -41,6 +42,13 @@ export function Header({ profile }: { profile: Profile }) {
               <ChevronRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
+
+            <Button variant="secondary" className="rounded-2xl bg-[#E3E8D9] text-[#2F3A2E] hover:bg-[#D6DDC8]" asChild>
+            <a href={profile.resumeUrl} target="_blank" rel="noreferrer">
+                Посмотреть резюме
+            </a>
+            </Button>
+
         </div>
       </div>
     </motion.div>
