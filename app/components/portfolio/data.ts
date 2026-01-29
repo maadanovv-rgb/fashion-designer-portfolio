@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     id: "p1",
     title: "Вечернее платье",
-    category: "Evening",
+    category: "Вечерние",
     tags: ["Индивидуальный пошив", "Вечерние"],
     year: "2025",
     description: "Ручная вышивка с бисерами и стеклянными стразами",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
   {
     id: "p2",
     title: "Этно-жилет Argyle",
-    category: "Sketches",
+    category: "Эскизы",
     tags: ["Эскизы", "Этно"],
     year: "2024",
     description: "Разработка принта в соответствии с концепцией темы",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     id: "p3",
     title: "Этно-жилет Argyle",
-    category: "Sketches",
+    category: "Эскизы",
     tags: ["Эскизы", "Этно"],
     year: "2025",
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
   {
     id: "p4",
     title: "Хлопковый рассвет",
-    category: "Sketches",
+    category: "Эскизы",
     tags: ["Эскизы", "Этно"],
     year: "2023",
     description: "Разработка принта в соответствии с концепцией темы",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     id: "p5",
     title: "Этно-эскизы",
-    category: "Sketches",
+    category: "Эскизы",
     tags: ["Эскизы", "Этно"],
     year: "2024",
     description: "Разработка принта в соответствии с концепцией темы",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
   {
     id: "p6",
     title: "Свадебные-эскизы",
-    category: "Sketches",
+    category: "Эскизы",
     tags: ["Свадебные", "Эскизы"],
     year: "2024",
     description: "Художественные эскизы свадебных нарядов",
