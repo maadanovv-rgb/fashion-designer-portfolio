@@ -79,10 +79,11 @@ export function PortfolioSection({
           <TabsList className="flex h-auto flex-wrap justify-start gap-2 bg-transparent p-0 ">
             {categories.map((c) => (
               <TabsTrigger
-                key={c}
-                value={c}
-                className="flex h-auto w-full justify-start gap-2 overflow-x-auto whitespace-nowrap bg-transparent p-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              >
+                    key={c}
+                    value={c}
+                    className="shrink-0 rounded-2xl border border-[#D6DDC8] bg-[#FBFCF8] px-4 py-2 text-sm data-[state=active]:bg-[#E3E8D9]"
+                >
+
                 {c}
                 <span className="ml-2 rounded-full bg-[#E3E8D9] px-2 py-0.5 text-xs text-muted-foreground text-[#2F3A2E]">
                   {buckets[c] ?? 0}
