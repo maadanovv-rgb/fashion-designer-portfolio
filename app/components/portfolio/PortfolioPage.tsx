@@ -13,6 +13,9 @@ import { AboutServices } from "./sections/AboutServices";
 import { PortfolioSection } from "./sections/PortfolioSection";
 import { ProjectDialog } from "./sections/ProjectDialog";
 
+import ButterflySticky from "../ButterflySticky";
+
+
 export default function PortfolioPage() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<Project | null>(null);
@@ -22,15 +25,38 @@ export default function PortfolioPage() {
     setOpen(true);
   };
 
-  return (
-    <div className="min-h-screen bg-[#F6F7F2] text-[#2F3A2E]">
-      <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
-        <Header profile={profile} />
-        <AboutServices profile={profile} />
-        <PortfolioSection categories={CATEGORIES} projects={projects} onOpen={openProject} />
+  
 
+  return (
+<div className="min-h-screen text-[#2F3A2E]">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
+            <Header profile={profile} />
+        <section data-bfly-card="hero" className="relative overflow-visible" >
+            <ButterflySticky cardId="hero" corner="tr" offset={{ x: 6, y: -10 }} delay={0.2} size={26} />
+            <ButterflySticky cardId="hero" corner="tl" offset={{ x: 6, y: -10 }} delay={0.3} size={26} />
+            <ButterflySticky cardId="hero" corner="br" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="hero" corner="bl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <AboutServices profile={profile}  />
+        </section>
+        <section data-bfly-card="tabs" className="relative overflow-visible" >
+            <ButterflySticky cardId="tabs" corner="tr" offset={{ x: 6, y: -10 }} delay={0.2} size={26} />
+            <ButterflySticky cardId="tabs" corner="tl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="tabs" corner="br" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="tabs" corner="bl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+
+
+            <PortfolioSection categories={CATEGORIES} projects={projects} onOpen={openProject} />
+        </section>
         <div className="mt-14 grid gap-4 md:grid-cols-2">
-          <Card className="rounded-2xl border-[#D6DDC8] bg-[#FBFCF8]">
+          <Card
+              data-bfly-card="grid"   // или contacts — главное совпадение
+              className="relative overflow-visible rounded-2xl border border-[#D6DDC8] bg-[#FBFCF8]"
+            >
+               
+            <ButterflySticky cardId="grid" corner="tr" offset={{ x: 6, y: -10 }} delay={0.2} size={26} />
+            <ButterflySticky cardId="grid" corner="tl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="grid" corner="br" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="grid" corner="bl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
             <CardHeader>
               <CardTitle className="text-base tracking-tight">Контакты</CardTitle>
             </CardHeader>
@@ -65,7 +91,12 @@ export default function PortfolioPage() {
             </CardContent>
           </Card>
 
-          <Card className="rounded-2xl border-[#D6DDC8] bg-[#FBFCF8]">
+          <Card className="relative overflow-visible  rounded-2xl border-[#D6DDC8] bg-[#FBFCF8]" data-bfly-card="card-1" >
+            
+            <ButterflySticky cardId="card-1" corner="tr" offset={{ x: 6, y: -10 }} delay={0.2} size={26} />
+            <ButterflySticky cardId="card-1" corner="tl" offset={{ x: 6, y: -10 }} delay={0.3} size={26} />
+            <ButterflySticky cardId="card-1" corner="br" offset={{ x: 6, y: -10 }} delay={0.6} size={26} />
+            <ButterflySticky cardId="card-1" corner="bl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
             <CardHeader>
               <CardTitle className="text-base tracking-tight">Как я работаю</CardTitle>
             </CardHeader>
