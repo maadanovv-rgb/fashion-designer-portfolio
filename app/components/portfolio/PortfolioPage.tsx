@@ -32,17 +32,17 @@ export default function PortfolioPage() {
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
             <Header profile={profile} />
         <section data-bfly-card="hero" className="relative overflow-visible" >
-            <ButterflySticky cardId="hero" corner="tr" offset={{ x: 6, y: -10 }} delay={0.2} size={26} />
-            <ButterflySticky cardId="hero" corner="tl" offset={{ x: 6, y: -10 }} delay={0.3} size={26} />
-            <ButterflySticky cardId="hero" corner="br" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
-            <ButterflySticky cardId="hero" corner="bl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="hero" corner="tr" offset={{ x: 6, y: -10 }} flyDuration={8} delay={0.2} size={26} />
+            <ButterflySticky cardId="hero" corner="tl" offset={{ x: 6, y: -10 }} flyDuration={6} delay={0.4} size={26} />
+            <ButterflySticky cardId="hero" corner="br" offset={{ x: 6, y: -10 }} flyDuration={7} delay={0.4} size={26} />
+            <ButterflySticky cardId="hero" corner="bl" offset={{ x: 6, y: -10 }} flyDuration={9} delay={0.4} size={26} />
             <AboutServices profile={profile}  />
         </section>
         <section data-bfly-card="tabs" className="relative overflow-visible" >
-            <ButterflySticky cardId="tabs" corner="tr" offset={{ x: 6, y: -10 }} delay={0.2} size={26} />
-            <ButterflySticky cardId="tabs" corner="tl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
-            <ButterflySticky cardId="tabs" corner="br" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
-            <ButterflySticky cardId="tabs" corner="bl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="tabs" corner="tr" offset={{ x: 6, y: -10 }} flyDuration={11} delay={0.2} size={26} />
+            <ButterflySticky cardId="tabs" corner="tl" offset={{ x: 6, y: -10 }} flyDuration={9} delay={0.4} size={26} />
+            <ButterflySticky cardId="tabs" corner="br" offset={{ x: 6, y: -10 }} flyDuration={6} delay={0.4} size={26} />
+            <ButterflySticky cardId="tabs" corner="bl" offset={{ x: 6, y: -10 }} flyDuration={7} delay={0.4} size={26} />
 
 
             <PortfolioSection categories={CATEGORIES} projects={projects} onOpen={openProject} />
@@ -53,10 +53,10 @@ export default function PortfolioPage() {
               className="relative overflow-visible rounded-2xl border border-[#D6DDC8] bg-[#FBFCF8]"
             >
                
-            <ButterflySticky cardId="grid" corner="tr" offset={{ x: 6, y: -10 }} delay={0.2} size={26} />
-            <ButterflySticky cardId="grid" corner="tl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
-            <ButterflySticky cardId="grid" corner="br" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
-            <ButterflySticky cardId="grid" corner="bl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="grid" corner="tr" offset={{ x: 6, y: -10 }} flyDuration={6} delay={0.2} size={26} />
+            <ButterflySticky cardId="grid" corner="tl" offset={{ x: 6, y: -10 }} flyDuration={8} delay={0.4} size={26} />
+            <ButterflySticky cardId="grid" corner="br" offset={{ x: 6, y: -10 }} flyDuration={9} delay={0.4} size={26} />
+            <ButterflySticky cardId="grid" corner="bl" offset={{ x: 6, y: -10 }} flyDuration={12} delay={0.4} size={26} />
             <CardHeader>
               <CardTitle className="text-base tracking-tight">Контакты</CardTitle>
             </CardHeader>
@@ -93,10 +93,10 @@ export default function PortfolioPage() {
 
           <Card className="relative overflow-visible  rounded-2xl border-[#D6DDC8] bg-[#FBFCF8]" data-bfly-card="card-1" >
             
-            <ButterflySticky cardId="card-1" corner="tr" offset={{ x: 6, y: -10 }} delay={0.2} size={26} />
-            <ButterflySticky cardId="card-1" corner="tl" offset={{ x: 6, y: -10 }} delay={0.3} size={26} />
-            <ButterflySticky cardId="card-1" corner="br" offset={{ x: 6, y: -10 }} delay={0.6} size={26} />
-            <ButterflySticky cardId="card-1" corner="bl" offset={{ x: 6, y: -10 }} delay={0.4} size={26} />
+            <ButterflySticky cardId="card-1" corner="tr" offset={{ x: 6, y: -10 }} flyDuration={6} delay={0.2} size={26} />
+            <ButterflySticky cardId="card-1" corner="tl" offset={{ x: 6, y: -10 }} flyDuration={8} delay={0.3} size={26} />
+            <ButterflySticky cardId="card-1" corner="br" offset={{ x: 6, y: -10 }} flyDuration={9} delay={0.6} size={26} />
+            <ButterflySticky cardId="card-1" corner="bl" offset={{ x: 6, y: -10 }} flyDuration={12} delay={0.4} size={26} />
             <CardHeader>
               <CardTitle className="text-base tracking-tight">Как я работаю</CardTitle>
             </CardHeader>

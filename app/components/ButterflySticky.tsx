@@ -6,9 +6,23 @@ import { createPortal } from "react-dom";
 
 function ButterflyIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 64 64" className={className} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M32 31c-6-12-18-18-24-12-6 6 0 18 12 24 6 3 12 2 12-12Z" fill="currentColor" opacity="0.9" />
-      <path d="M32 31c6-12 18-18 24-12 6 6 0 18-12 24-6 3-12 2-12-12Z" fill="currentColor" opacity="0.9" />
+    <svg
+      viewBox="0 0 64 64"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M32 31c-6-12-18-18-24-12-6 6 0 18 12 24 6 3 12 2 12-12Z"
+        fill="currentColor"
+        opacity="0.9"
+      />
+      <path
+        d="M32 31c6-12 18-18 24-12 6 6 0 18-12 24-6 3-12 2-12-12Z"
+        fill="currentColor"
+        opacity="0.9"
+      />
       <path d="M32 30c0 10 2 18 2 26" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       <path d="M32 30c0 10-2 18-2 26" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       <path d="M34 12c3-3 7-4 10-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -20,91 +34,82 @@ function ButterflyIcon({ className }: { className?: string }) {
 type Props = {
   cardId: string; // data-bfly-card="..."
   corner?: "tr" | "tl" | "br" | "bl";
-  offset?: { x: number; y: number };
-  delay?: number;
+  offset?: { x: number; y: number }; // микро-сдвиг от угла
+  delay?: number; // очередь (1-я, 2-я...)
   size?: number;
+  flyDuration?: number; // скорость прилёта
 };
 
 export default function ButterflySticky({
   cardId,
   corner = "tr",
   offset = { x: 6, y: -10 },
-  delay = 0.2,
+  delay = 0.6,
   size = 26,
+  flyDuration = 8.5, // ✅ медленно
 }: Props) {
+  const PAD = 8; // ✅ как раньше: top/right = 8px
+
   const [mounted, setMounted] = useState(false);
-
-  // позиция цели для прилёта (фиксируем один раз)
-  const [target, setTarget] = useState<{ x: number; y: number } | null>(null);
-
-  // финальная позиция "приклейки" внутри карточки
   const [landed, setLanded] = useState(false);
+  const [targetScreen, setTargetScreen] = useState<{ x: number; y: number } | null>(null);
+
+  const startedRef = useRef(false);
 
   const color = useMemo(() => (cardId.length % 2 ? "#7B8A61" : "#8C9870"), [cardId]);
 
   useEffect(() => setMounted(true), []);
 
-  const getCornerPoint = (el: Element) => {
-    const r = el.getBoundingClientRect();
-    const ox = offset.x ?? 0;
-    const oy = offset.y ?? 0;
-
-    const p = {
-      tr: { x: r.right + ox, y: r.top + oy },
-      tl: { x: r.left + ox, y: r.top + oy },
-      br: { x: r.right + ox, y: r.bottom + oy },
-      bl: { x: r.left + ox, y: r.bottom + oy },
-    };
-
-    return p[corner];
-  };
-
-  // ✅ Важно: цель фиксируем ОДИН раз (иначе при скролле "улетает")
+  // ✅ 1) Фиксируем цель полёта ОДИН РАЗ (чтобы при скролле не "уезжала")
   useEffect(() => {
-    if (!mounted) return;
+    if (!mounted || startedRef.current) return;
 
     const el = document.querySelector(`[data-bfly-card="${cardId}"]`);
     if (!el) return;
 
-    const p = getCornerPoint(el);
-    setTarget(p);
-    // никаких scroll listeners
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    startedRef.current = true;
+
+    const r = el.getBoundingClientRect();
+
+    // экранные координаты того же угла, где будет приклейка (PAD + offset)
+    const base = {
+      tr: { x: r.right - PAD, y: r.top + PAD },
+      tl: { x: r.left + PAD, y: r.top + PAD },
+      br: { x: r.right - PAD, y: r.bottom - PAD },
+      bl: { x: r.left + PAD, y: r.bottom - PAD },
+    }[corner];
+
+    setTargetScreen({
+      x: base.x + (offset.x ?? 0),
+      y: base.y + (offset.y ?? 0),
+    });
   }, [mounted, cardId, corner, offset.x, offset.y]);
 
-  // когда закончился полёт — "приклеиваем"
-  useEffect(() => {
-    if (!target) return;
-    const t = setTimeout(() => setLanded(true), Math.round((delay + 2.6) * 1000));
-    return () => clearTimeout(t);
-  }, [target, delay]);
+  const showFly = mounted && !!targetScreen && !landed;
 
-  const showFly = mounted && !!target && !landed;
-
-  // ---- FLY LAYER (Portal) ----
+  // ✅ 2) Полёт: реально по экрану (Portal) + медленно
   const flyLayer =
     showFly && typeof document !== "undefined"
       ? createPortal(
           <div className="pointer-events-none fixed inset-0 z-[9999]" aria-hidden="true">
             <motion.div
               className="absolute"
-              initial={{ x: -90, y: 120, opacity: 0, rotate: -18, scale: 0.9 }}
+              initial={{ x: -160, y: 220, opacity: 0, rotate: -18, scale: 0.9 }}
               animate={{
                 opacity: [0, 1, 1],
-                x: [-90, target!.x * 0.55, target!.x],
-                y: [120, target!.y - 140, target!.y],
+                x: [-160, targetScreen!.x * 0.45, targetScreen!.x - 6],
+                y: [220, targetScreen!.y - 260, targetScreen!.y - 6],
+
                 rotate: [-18, 14, 0],
-                scale: [0.9, 1.05, 1],
+                scale: 1,
               }}
-              transition={{ duration: 2.6, delay, ease: "easeInOut" }}
+              transition={{ duration: flyDuration, delay, ease: "easeInOut" }}
+              onAnimationComplete={() => setLanded(true)} // ✅ без таймера, без рассинхрона
             >
               <motion.div
                 style={{ width: size, height: size, color }}
-                animate={{
-                  scaleX: [1, 0.72, 1, 0.86, 1],
-                  rotate: [0, 2.5, -2.5, 1.2, 0],
-                }}
-                transition={{ duration: 0.9, repeat: Infinity, ease: "easeInOut" }}
+                animate={{ scaleX: [1, 0.78, 1, 0.88, 1], rotate: [0, 2.5, -2.5, 1.2, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }} // спокойнее
               >
                 <ButterflyIcon className="h-full w-full drop-shadow-sm" />
               </motion.div>
@@ -114,21 +119,23 @@ export default function ButterflySticky({
         )
       : null;
 
-  // ---- STICK LAYER (inside Card) ----
-  // появление как "приземление" (чтобы не выглядело второй бабочкой)
+  // ✅ 3) Приклейка: ТОЧНО "как раньше" — угол + PAD + offset (никаких left/top пересчётов)
+  const stickStyle: React.CSSProperties =
+    corner === "tr"
+      ? { top: PAD + (offset.y ?? 0), right: PAD - (offset.x ?? 0) }
+      : corner === "tl"
+      ? { top: PAD + (offset.y ?? 0), left: PAD + (offset.x ?? 0) }
+      : corner === "br"
+      ? { bottom: PAD - (offset.y ?? 0), right: PAD - (offset.x ?? 0) }
+      : { bottom: PAD - (offset.y ?? 0), left: PAD + (offset.x ?? 0) };
+
   const stickLayer = landed ? (
     <motion.div
-      initial={{ opacity: 0, scale: 0.85, y: -6 }}
+      initial={{ opacity: 0, scale: 0.95, y: -4 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
       className="pointer-events-none absolute z-10"
-      style={{
-        ...(corner === "tr" ? { top: 8, right: 8 } : {}),
-        ...(corner === "tl" ? { top: 8, left: 8 } : {}),
-        ...(corner === "br" ? { bottom: 8, right: 8 } : {}),
-        ...(corner === "bl" ? { bottom: 8, left: 8 } : {}),
-        transform: `translate(${offset.x}px, ${offset.y}px)`,
-      }}
+      style={stickStyle}
       aria-hidden="true"
     >
       <motion.div
@@ -138,7 +145,7 @@ export default function ButterflySticky({
       >
         <motion.div
           animate={{ scaleX: [1, 0.78, 1, 0.88, 1] }}
-          transition={{ duration: 1.1, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
         >
           <ButterflyIcon className="h-full w-full drop-shadow-sm" />
         </motion.div>
