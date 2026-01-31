@@ -1,3 +1,12 @@
+export type FolderId =
+  | "tailoring"
+  | "art_sketch"
+  | "tech_sketch"
+  | "handwork"
+  | "collections"
+  | "design_prints";
+
+
 export type Project = {
   id: string;
   title: string;
@@ -6,6 +15,7 @@ export type Project = {
   year: string;
   description: string;
   images: string[];
+  folderId: FolderId; //
 };
 
 export type Profile = {

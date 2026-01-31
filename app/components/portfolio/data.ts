@@ -1,7 +1,7 @@
 import { Sparkles, Scissors, Gem, Shirt } from "lucide-react";
 import type { Profile, Project } from "./types";
 
-export const CATEGORIES = ["Все", "Свадебные", "Вечерние", "Повседневные", "Сценические", "Эскизы", "Стразы"];
+// export const CATEGORIES = ["Все", "Свадебные", "Вечерние", "Повседневные", "Сценические", "Эскизы", "Стразы"];
 
 export const profile: Profile = {
   name: "Mellsan",
@@ -22,6 +22,17 @@ export const profile: Profile = {
   
 };
 
+export const FOLDERS = [
+  { id: "tailoring", title: "Индивидуальный пошив", subtitle: "Платья, костюмы, посадка", icon: "🧵" },
+  { id: "art_sketch", title: "Художественный эскиз", subtitle: "Fashion-эскизы, идеи, силуэты", icon: "✍️" },
+  { id: "tech_sketch", title: "Технический эскиз", subtitle: "Flats, схемы, конструкция", icon: "📐" },
+  { id: "handwork", title: "Ручные работы (вышивки)", subtitle: "Стразы, бисер, декор", icon: "💎" },
+  { id: "collections", title: "Коллекции", subtitle: "Капсулы и серии", icon: "🗂️" },
+  { id: "design_prints", title: "Дизайн принтов", subtitle: "Концепции принтов для одежды и текстиля", icon: "🧑🏻‍🎨" },
+
+] as const;
+
+
 export const projects: Project[] = [
   {
     id: "p1",
@@ -32,8 +43,10 @@ export const projects: Project[] = [
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
       "/portfolio/biser1.webp",
+      "/portfolio/biser3.webp",
       "/portfolio/biser2.webp"
     ],
+    folderId: "handwork",
   },
   {
     id: "p2",
@@ -41,11 +54,12 @@ export const projects: Project[] = [
     category: "Эскизы",
     tags: ["Эскизы", "Этно"],
     year: "2024",
-    description: "Разработка принта в соответствии с концепцией темы",
+    description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
      "/portfolio/etno1.webp",
      "/portfolio/etno2.webp"
     ],
+    folderId: "design_prints",
   },
   {
     id: "p3",
@@ -58,28 +72,32 @@ export const projects: Project[] = [
       "/portfolio/jaket1.webp",
       "/portfolio/jaket2.webp"
     ],
+    folderId: "design_prints",
   },
   {
     id: "p4",
-    title: "Хлопковый рассвет",
+    title: "Сердце",
     category: "Эскизы",
-    tags: ["Эскизы", "Этно"],
+    tags: ["Эскизы"],
     year: "2023",
     description: "Разработка принта в соответствии с концепцией темы",
     images: [
       "/portfolio/jurek1.webp",
-      "/portfolio/jurek2.webp"],
+      "/portfolio/jurek2.webp"
+    ],
+    folderId: "design_prints",
   },
   {
     id: "p5",
-    title: "Этно-эскизы",
+    title: "Эскизы",
     category: "Эскизы",
-    tags: ["Эскизы", "Этно"],
+    tags: ["Эскизы"],
     year: "2024",
     description: "Разработка принта в соответствии с концепцией темы",
     images: [
       "/portfolio/olen1.webp",
       "/portfolio/olen2.webp"],
+      folderId: "design_prints"
   },
   {
     id: "p6",
@@ -91,6 +109,35 @@ export const projects: Project[] = [
     images: [
       "/portfolio/svadba1.webp",
       "/portfolio/svadba2.webp"],
+      folderId: "art_sketch"
+  },
+   {
+    id: "p7",
+    title: "Вечернее платье",
+    category: "Ручная вышивка",
+    tags: ["Ручная вышивка, вечернее платье"],
+    year: "2024",
+    description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
+    images: [
+      "/portfolio/zelen1.webp",
+      "/portfolio/zelen2.webp",
+    ],
+      folderId: "handwork"
+  },
+  {
+    id: "p8",
+    title: "Твидовый жакет",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив, твидовый жакет"],
+    year: "2024",
+    description: "Индивидуальный пошив твидового жакета",
+    images: [
+      "/portfolio/tvid1.webp",
+      "/portfolio/tvid2.webp",
+      "/portfolio/tvid3.webp",
+
+    ],
+      folderId: "tailoring"
   },
 ];
 

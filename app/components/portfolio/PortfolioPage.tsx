@@ -5,12 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Mail, Phone, Instagram} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import { CATEGORIES, profile, projects } from "./data";
+import { profile, projects } from "./data";
 import type { Project } from "./types";
 
 import { Header } from "./sections/Header";
 import { AboutServices } from "./sections/AboutServices";
-import { PortfolioSection } from "./sections/PortfolioSection";
+import PortfolioSection  from "./sections/PortfolioSection";
 import { ProjectDialog } from "./sections/ProjectDialog";
 
 import ButterflySticky from "../ButterflySticky";
@@ -42,14 +42,13 @@ export default function PortfolioPage() {
             <ButterflySticky cardId="tabs" corner="tr" offset={{ x: 6, y: -10 }} flyDuration={11} delay={0.2} size={26} />
             <ButterflySticky cardId="tabs" corner="tl" offset={{ x: 6, y: -10 }} flyDuration={9} delay={0.4} size={26} />
             <ButterflySticky cardId="tabs" corner="br" offset={{ x: 6, y: -10 }} flyDuration={6} delay={0.4} size={26} />
-            <ButterflySticky cardId="tabs" corner="bl" offset={{ x: 6, y: -10 }} flyDuration={7} delay={0.4} size={26} />
 
 
-            <PortfolioSection categories={CATEGORIES} projects={projects} onOpen={openProject} />
+            <PortfolioSection projects={projects} onOpen={openProject} />
         </section>
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           <Card
-              data-bfly-card="grid"   // или contacts — главное совпадение
+              data-bfly-card="grid" 
               className="relative overflow-visible rounded-2xl border border-[#D6DDC8] bg-[#FBFCF8]"
             >
                
