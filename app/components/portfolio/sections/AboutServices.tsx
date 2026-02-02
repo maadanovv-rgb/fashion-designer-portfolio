@@ -55,7 +55,7 @@ export function AboutServices({ profile }: { profile: Profile }) {
             <div className="flex items-start gap-3">
               <Gem className="mt-0.5 h-4 w-4" />
               <div>
-                <div className="font-medium text-text-[#2F3A2E]">Вышивка стразами</div>
+                <div className="font-medium text-text-[#2F3A2E]">Вышивка бисерами</div>
                 <div className="text-xs">Подбор камней, выкладка по схеме</div>
               </div>
             </div>

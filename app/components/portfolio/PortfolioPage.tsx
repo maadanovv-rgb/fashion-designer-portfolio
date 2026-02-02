@@ -11,7 +11,7 @@ import type { Project } from "./types";
 import { Header } from "./sections/Header";
 import { AboutServices } from "./sections/AboutServices";
 import PortfolioSection  from "./sections/PortfolioSection";
-import { ProjectDialog } from "./sections/ProjectDialog";
+import  ProjectDialog  from "./sections/ProjectDialog";
 
 import ButterflySticky from "../ButterflySticky";
 
