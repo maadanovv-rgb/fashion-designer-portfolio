@@ -1,5 +1,5 @@
 import { Sparkles, Scissors, Gem, Shirt } from "lucide-react";
-import type { Profile, Project } from "./types";
+import type { Folder, Profile, Project } from "./types";
 
 // export const CATEGORIES = ["Все", "Свадебные", "Вечерние", "Повседневные", "Сценические", "Эскизы", "Стразы"];
 
@@ -32,13 +32,23 @@ export const FOLDERS = [
 
 ] as const;
 
+export const folders: Folder[] = [
+  { id: "tailoring", title: "Индивидуальный пошив", subtitle: "Платья, жакеты, комплекты" },
+  { id: "art_sketch", title: "Художественный эскиз", subtitle: "Fashion-иллюстрации, образы" },
+  { id: "tech_sketch", title: "Тех. эскиз", subtitle: "Техрисунки, flats, схемы" },
+  { id: "handwork", title: "Ручные работы (вышивки)", subtitle: "Бисер, стразы, декор" },
+  { id: "collections", title: "Коллекции", subtitle: "Серии работ и капсулы" },
+  { id: "design_prints", title: "Дизайн принтов", subtitle: "Концепции принтов для одежды и текстиля"},
+
+];
+
 
 export const projects: Project[] = [
   {
     id: "p1",
     title: "Вечернее платье",
     category: "Вечерние",
-    tags: ["Индивидуальный пошив", "Вечерние"],
+    tags: ["Индивидуальный пошив"],
     year: "2025",
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
@@ -52,7 +62,7 @@ export const projects: Project[] = [
     id: "p2",
     title: "Этно-жилет Argyle",
     category: "Эскизы",
-    tags: ["Эскизы", "Этно"],
+    tags: ["Эскизы"],
     year: "2024",
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
@@ -65,7 +75,7 @@ export const projects: Project[] = [
     id: "p3",
     title: "Этно-жилет Argyle",
     category: "Эскизы",
-    tags: ["Эскизы", "Этно"],
+    tags: ["Этно"],
     year: "2025",
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
@@ -103,7 +113,7 @@ export const projects: Project[] = [
     id: "p6",
     title: "Свадебные-эскизы",
     category: "Эскизы",
-    tags: ["Свадебные", "Эскизы"],
+    tags: ["Свадебные"],
     year: "2024",
     description: "Художественные эскизы свадебных нарядов",
     images: [
@@ -115,7 +125,7 @@ export const projects: Project[] = [
     id: "p7",
     title: "Вечернее платье",
     category: "Ручная вышивка",
-    tags: ["Ручная вышивка, вечернее платье"],
+    tags: ["Ручная вышивка"],
     year: "2024",
     description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
     images: [
@@ -128,7 +138,7 @@ export const projects: Project[] = [
     id: "p8",
     title: "Твидовый жакет",
     category: "Индивидуальный пошив",
-    tags: ["Индивидуальный пошив, твидовый жакет"],
+    tags: ["Индивидуальный пошив"],
     year: "2024",
     description: "Индивидуальный пошив твидового жакета",
     images: [

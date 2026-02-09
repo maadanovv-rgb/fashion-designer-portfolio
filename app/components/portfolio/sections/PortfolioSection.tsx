@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { FOLDERS } from "../data";
 import type { Project, FolderId } from "../types";
-import { ProjectCard } from "./ProjectCard";
+import  ProjectCard  from "./ProjectCard";
 
 type Props = {
   projects: Project[];
@@ -87,7 +87,7 @@ export default function PortfolioSection({ projects, onOpen }: Props) {
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProjects.map((p) => (
-              <ProjectCard key={p.id} p={p} onOpen={onOpen} />
+              <ProjectCard folderId={p.id} project={p} />
             ))}
           </div>
 

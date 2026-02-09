@@ -61,7 +61,7 @@ export function AboutServices({ profile }: { profile: Profile }) {
             </div>
 
             <Button variant="secondary" className="rounded-2xl bg-[#E3E8D9] text-[#2F3A2E] hover:bg-[#D6DDC8]" asChild>
-              <a href={`mailto:${profile.email}?subject=Заказ%20на%20пошив%20/%20эскиз`}>
+              <a href={`https://wa.me/+996776068583`}>
                 <Download className="mr-2 h-4 w-4" />
                 Запросить прайс / бриф
               </a>

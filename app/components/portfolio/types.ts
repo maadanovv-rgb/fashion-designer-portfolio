@@ -6,6 +6,11 @@ export type FolderId =
   | "collections"
   | "design_prints";
 
+  export type Folder = {
+  id: FolderId;
+  title: string;
+  subtitle?: string;
+};
 
 export type Project = {
   id: string;

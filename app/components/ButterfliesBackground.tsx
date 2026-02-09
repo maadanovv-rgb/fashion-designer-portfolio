@@ -149,7 +149,8 @@ export default function ButterfliesBackground({
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-10 overflow-hidden" aria-hidden="true"
+      className="pointer-events-none w-full h-full inset-0 "
+      aria-hidden="true"
     >
       {butterflies.map((b) => (
         <motion.div

@@ -10,10 +10,9 @@ import type { Project } from "./types";
 
 import { Header } from "./sections/Header";
 import { AboutServices } from "./sections/AboutServices";
-import PortfolioSection  from "./sections/PortfolioSection";
-import  ProjectDialog  from "./sections/ProjectDialog";
 
 import ButterflySticky from "../ButterflySticky";
+import FoldersSection from "./sections/FolderSection";
 
 
 export default function PortfolioPage() {
@@ -44,7 +43,8 @@ export default function PortfolioPage() {
             <ButterflySticky cardId="tabs" corner="br" offset={{ x: 6, y: -10 }} flyDuration={6} delay={0.4} size={26} />
 
 
-            <PortfolioSection projects={projects} onOpen={openProject} />
+            {/* <PortfolioSection projects={projects} onOpen={openProject} /> */}
+            <FoldersSection />
         </section>
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           <Card
@@ -84,7 +84,7 @@ export default function PortfolioPage() {
               </div>
               <div className="pt-2">
                 <Button className="rounded-2xl bg-[#2F3A2E] text-[#F6F7F2] hover:bg-[#253025]" asChild>
-                  <a href={`mailto:${profile.email}?subject=Сотрудничество%20/%20заказ`}>Обсудить проект</a>
+                  <a href={`https://wa.me/996776068583`}>Обсудить проект</a>
                 </Button>
               </div>
             </CardContent>
@@ -114,7 +114,6 @@ export default function PortfolioPage() {
         <div className="mt-10 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} · {profile.name}</div>
       </div>
 
-      <ProjectDialog open={open} onOpenChange={setOpen} project={active} email={profile.email} />
     </div>
   );
 }
