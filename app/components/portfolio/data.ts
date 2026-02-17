@@ -16,7 +16,7 @@ export const profile: Profile = {
   specialties: [
     { icon: Shirt, label: "Индивидуальный пошив" },
     { icon: Scissors, label: "Эскизы + техрисунки" },
-    { icon: Gem, label: "Вышивка стразами" },
+    { icon: Gem, label: "Вышивка бисерами" },
     { icon: Sparkles, label: "Финишная отделка" },
   ],
   

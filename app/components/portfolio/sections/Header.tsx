@@ -3,6 +3,7 @@ import { Instagram, Mail, Phone, MapPin, ExternalLink, ChevronRight } from "luci
 import { Button } from "@/components/ui/button";
 import type { Profile } from "../types";
 import { IconPill } from "../ui/IconPill";
+import Link from "next/link";
 
 export function Header({ profile }: { profile: Profile }) {
   return (
@@ -35,13 +36,13 @@ export function Header({ profile }: { profile: Profile }) {
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
-
-          <Button variant="secondary" className="rounded-2xl bg-[#E3E8D9] text-[#2F3A2E] hover:bg-[#D6DDC8]" asChild>
-            <a href="#портфолио">
+          
+          {/* <Button variant="secondary" className="rounded-2xl bg-[#E3E8D9] text-[#2F3A2E] hover:bg-[#D6DDC8]" asChild>
+            <Link href={`/portfolio/`}>
               Смотреть работы
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
+            </Link>
+          </Button> */}
+
 
             <Button variant="secondary" className="rounded-2xl bg-[#E3E8D9] text-[#2F3A2E] hover:bg-[#D6DDC8]" asChild>
             <a href={profile.resumeUrl} target="_blank" rel="noreferrer">

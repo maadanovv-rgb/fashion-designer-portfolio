@@ -14,10 +14,57 @@ export default function ProjectPageClient({
   folder: Folder;
   project: Project;
   folderProjects: Project[];
+  
 }) {
   const images = useMemo(() => project.images ?? [], [project.images]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const [dragStartX, setDragStartX] = useState<number | null>(null);
+  const [dragDeltaX, setDragDeltaX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const swipeThreshold = 60; // можно 50-80
+
+  const prevImage = () => {
+    setLightboxIndex((i) => (i - 1 + images.length) % images.length);
+  };
+
+  const nextImage = () => {
+    setLightboxIndex((i) => (i + 1) % images.length);
+  };
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (images.length <= 1) return;
+    setDragStartX(e.clientX);
+    setDragDeltaX(0);
+    setIsDragging(false);
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (dragStartX === null) return;
+
+    const dx = e.clientX - dragStartX;
+    setDragDeltaX(dx);
+
+    // как только чуть двинул — считаем что это drag (чтобы не срабатывал клик)
+    if (!isDragging && Math.abs(dx) > 6) setIsDragging(true);
+  };
+
+  const onPointerUp = () => {
+    if (dragStartX === null) return;
+
+    const dx = dragDeltaX;
+
+    if (dx > swipeThreshold) prevImage();
+    else if (dx < -swipeThreshold) nextImage();
+
+    setDragStartX(null);
+    setDragDeltaX(0);
+    setIsDragging(false);
+  };
+
+
 
   useEffect(() => {
   if (!lightboxOpen) return;
@@ -67,12 +114,9 @@ export default function ProjectPageClient({
         </div>
       </div>
 
-      {/* content */}
       <div className="mx-auto max-w-6xl px-4 py-6 md:py-10">
         <div className="grid gap-8 md:grid-cols-[1.45fr_0.95fr]">
-          {/* LEFT: gallery */}
           <div>
-            {/* mobile hero */}
             <div className="md:hidden">
               <ProjectGallery
                 images={images}
@@ -81,7 +125,6 @@ export default function ProjectPageClient({
               />
             </div>
 
-            {/* desktop gallery */}
             <div className="hidden md:block">
               <ProjectGallery
                 images={images}
@@ -91,7 +134,6 @@ export default function ProjectPageClient({
             </div>
           </div>
 
-          {/* RIGHT: info sticky */}
           <aside className="md:sticky md:top-20 md:self-start">
             <div className="rounded-3xl border border-[#D6DDC8] bg-white/60 p-5 backdrop-blur">
               <h1 className="text-2xl font-semibold tracking-tight">{project.title}</h1>
@@ -121,41 +163,23 @@ export default function ProjectPageClient({
                 </p>
               ) : null}
 
-              {/* <div className="mt-6 grid gap-2">
-                <Button className="rounded-2xl bg-[#2F3A2E] text-white hover:bg-[#243025]">
-                  Запросить цену / бриф
-                </Button>
-                <Button
-                  variant="outline"
-                  className="rounded-2xl border-[#D6DDC8] bg-white/50 hover:bg-[#E3E8D9]"
-                  onClick={() => openLightbox(0)}
-                >
-                  Смотреть фото (полный экран)
-                </Button>
-              </div> */}
 
-              <div className="mt-5 border-t border-[#D6DDC8] pt-4 text-sm text-[#2F3A2E]/70">
-                Нажми на любое фото слева — откроется полноэкранный просмотр.
-              </div>
+
             </div>
           </aside>
         </div>
       </div>
 
-      {/* LIGHTBOX fullscreen */}
       {lightboxOpen ? (
   <div className="fixed inset-0 z-[9999] bg-[#1a1a1a]/90">
-    {/* overlay click closes */}
     <button
       className="absolute inset-0 cursor-zoom-out"
       onClick={() => setLightboxOpen(false)}
       aria-label="Close"
     />
 
-    {/* top controls */}
     <div className="pointer-events-none absolute left-0 top-0 z-10 w-full p-4">
       <div className="pointer-events-auto flex items-center justify-between">
-        {/* close like 12storeez (top-left) */}
         <button
           onClick={() => setLightboxOpen(false)}
           className="rounded-full bg-white/10 px-3 py-2 text-white hover:bg-white/20"
@@ -164,18 +188,22 @@ export default function ProjectPageClient({
           ✕
         </button>
 
-        {/* counter */}
         <div className="text-sm text-white/70">
           {lightboxIndex + 1}/{images.length}
         </div>
 
-        {/* spacer */}
         <div className="w-[44px]" />
       </div>
     </div>
 
-    {/* image */}
-    <div className="absolute inset-0 flex items-center justify-center p-4">
+    <div
+      className="absolute inset-0 flex items-center justify-center p-4 touch-pan-y"
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+      onPointerCancel={onPointerUp}
+      onPointerLeave={onPointerUp}
+    >
       <img
         src={images[lightboxIndex]}
         alt={`${project.title} ${lightboxIndex + 1}`}
@@ -185,7 +213,6 @@ export default function ProjectPageClient({
       />
     </div>
 
-    {/* arrows (optional, very minimal) */}
     {images.length > 1 ? (
       <>
         <button

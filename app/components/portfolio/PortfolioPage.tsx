@@ -104,9 +104,6 @@ export default function PortfolioPage() {
               <div>2) Эскиз / техрисунок + подбор материалов</div>
               <div>3) Примерки и посадка (для пошива)</div>
               <div>4) Финальная отделка, стразы, контроль качества</div>
-              <div className="rounded-2xl border border-[#D6DDC8] bg-[#FBFCF8] p-4 text-xs">
-                <span className="font-medium text-foreground">Совет:</span> добавь 6–12 лучших работ (фото/скетчи) и подпиши каждую: задача → материалы → что делала ты.
-              </div>
             </CardContent>
           </Card>
         </div>

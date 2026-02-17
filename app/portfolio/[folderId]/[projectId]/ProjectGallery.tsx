@@ -10,6 +10,8 @@ export default function ProjectGallery({
   images: string[];
   variant: "mobile" | "desktop";
   onImageClick: (idx: number) => void;
+
+  
 }) {
   const safe = useMemo(() => images.filter(Boolean), [images]);
   const [index, setIndex] = useState(0);
