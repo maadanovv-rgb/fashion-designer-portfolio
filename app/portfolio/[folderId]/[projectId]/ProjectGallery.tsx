@@ -1,108 +1,189 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+
+type Props = {
+  images?: string[];
+  variant?: "mobile" | "desktop";
+  onImageClick?: (index: number) => void;
+};
 
 export default function ProjectGallery({
   images,
-  variant,
+  variant = "desktop",
   onImageClick,
-}: {
-  images: string[];
-  variant: "mobile" | "desktop";
-  onImageClick: (idx: number) => void;
-
-  
-}) {
-  const safe = useMemo(() => images.filter(Boolean), [images]);
+}: Props) {
+  const safeImages = useMemo(() => images ?? [], [images]);
   const [index, setIndex] = useState(0);
 
-  if (!safe.length) {
-    return (
-      <div className="rounded-3xl border border-[#D6DDC8] bg-white/50 p-10 text-center text-sm text-[#2F3A2E]/70">
-        Фото пока нет
-      </div>
-    );
-  }
+  // swipe refs (без лишних ререндеров)
+  const startXRef = useRef<number | null>(null);
+  const deltaXRef = useRef(0);
+  const draggingRef = useRef(false);
+  const pointerIdRef = useRef<number | null>(null);
 
+  const THRESHOLD = 60; // сколько px нужно "протянуть" для свайпа
+  const DRAG_START = 6; // после скольких px считаем что это drag (а не клик)
+
+  const clampIndex = (i: number) => {
+    const len = safeImages.length || 1;
+    return ((i % len) + len) % len;
+  };
+
+  const goPrev = () => {
+    if (safeImages.length <= 1) return;
+    setIndex((i) => clampIndex(i - 1));
+  };
+
+  const goNext = () => {
+    if (safeImages.length <= 1) return;
+    setIndex((i) => clampIndex(i + 1));
+  };
+
+  // --- pointer handlers (mobile swipe) ---
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (safeImages.length <= 1) return;
+
+    // только primary pointer
+    if (pointerIdRef.current !== null) return;
+
+    pointerIdRef.current = e.pointerId;
+    startXRef.current = e.clientX;
+    deltaXRef.current = 0;
+    draggingRef.current = false;
+
+    // чтобы не терять события при уходе пальца за блок
+    e.currentTarget.setPointerCapture(e.pointerId);
+  };
+
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (pointerIdRef.current !== e.pointerId) return;
+    if (startXRef.current === null) return;
+
+    const dx = e.clientX - startXRef.current;
+    deltaXRef.current = dx;
+
+    if (!draggingRef.current && Math.abs(dx) > DRAG_START) {
+      draggingRef.current = true;
+    }
+  };
+
+  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (pointerIdRef.current !== e.pointerId) return;
+
+    const dx = deltaXRef.current;
+
+    // reset
+    pointerIdRef.current = null;
+    startXRef.current = null;
+    deltaXRef.current = 0;
+
+    if (Math.abs(dx) >= THRESHOLD) {
+      if (dx < 0) goNext();
+      else goPrev();
+    }
+
+    // небольшая задержка, чтобы клик сразу после свайпа не срабатывал
+    setTimeout(() => {
+      draggingRef.current = false;
+    }, 0);
+  };
+
+  const onPointerCancel = () => {
+    pointerIdRef.current = null;
+    startXRef.current = null;
+    deltaXRef.current = 0;
+    draggingRef.current = false;
+  };
+
+  // ---------- RENDER ----------
   if (variant === "mobile") {
+    const current = safeImages[index];
+
     return (
-      <div className="rounded-3xl border border-[#D6DDC8] bg-white/60 p-3">
-        <div className="relative overflow-hidden rounded-2xl bg-[#EDEFE6]">
-          <button
-            className="absolute left-2 top-50 z-10 rounded-full bg-black/30 px-3 py-2 text-white"
-            onClick={() => setIndex((i) => (i - 1 + safe.length) % safe.length)}
-          >
-            ←
-          </button>
-          <button
-            className="absolute right-2 top-50 z-10 rounded-full bg-black/30 px-3 py-2 text-white"
-            onClick={() => setIndex((i) => (i + 1) % safe.length)}
-          >
-            →
-          </button>
-
+      <div className="rounded-[28px] border border-[#D6DDC8] bg-[#FBFCF8] p-4">
+        <div
+          className="relative overflow-hidden rounded-[22px] bg-white"
+          style={{ touchAction: "pan-y" }} // вертикальный скролл страницы не ломаем
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerCancel}
+        >
           <img
-            src={safe[index]}
-            alt={`image ${index + 1}`}
-            className="h-[56vh] w-full object-contain"
-            onClick={() => onImageClick(index)}
+            src={current}
+            alt=""
             draggable={false}
+            className="w-full select-none object-contain"
+            style={{ maxHeight: "62vh" }}
+            onClick={(e) => {
+              e.stopPropagation();
+              // если был свайп — не открываем fullscreen
+              if (draggingRef.current) return;
+              onImageClick?.(index);
+            }}
           />
-        </div>
 
-        <div className="mt-3 flex items-center justify-center">
-          <div className="text-sm text-[#2F3A2E]/70">
-            {index + 1}/{safe.length}
-          </div>
-
-          {/* <div className="flex gap-2">
-            {safe.map((_, i) => (
+          {safeImages.length > 1 && (
+            <>
+              {/* стрелки */}
               <button
-                key={`dot-${i}`}
-                onClick={() => setIndex(i)}
-                className={`h-2 w-2 rounded-full ${
-                  i === index ? "bg-[#2F3A2E]" : "bg-[#D6DDC8]"
-                }`}
-                aria-label={`go ${i + 1}`}
-              />
-            ))}
-          </div> */}
+                type="button"
+                aria-label="Prev"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  goPrev();
+                }}
+                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/20 px-4 py-3 text-white backdrop-blur hover:bg-black/30"
+              >
+                ←
+              </button>
 
-          {/* <button
-            onClick={() => onImageClick(index)}
-            className="rounded-full border border-[#D6DDC8] bg-white/60 px-3 py-1 text-sm hover:bg-[#E3E8D9]"
-          >
-            Весь экран
-          </button> */}
+              <button
+                type="button"
+                aria-label="Next"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  goNext();
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/20 px-4 py-3 text-white backdrop-blur hover:bg-black/30"
+              >
+                →
+              </button>
+
+              {/* счетчик */}
+              <div className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-black/30 px-3 py-1 text-xs text-white backdrop-blur">
+                {index + 1}/{safeImages.length}
+              </div>
+            </>
+          )}
         </div>
       </div>
     );
   }
 
-  // desktop
+  // --- DESKTOP вариант оставь как у тебя (или сеткой) ---
+  // Если хочешь — сделаем как 12storeez (2 колонки, sticky aside) отдельным шагом.
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      {safe.map((src, idx) => (
-        <button
-          key={`${src}-${idx}`}
-          onClick={() => onImageClick(idx)}
-          className="group overflow-hidden rounded-3xl border border-[#D6DDC8] bg-white/40"
-        >
-          <div className="relative bg-[#EDEFE6]">
+    <div className="rounded-[28px] border border-[#D6DDC8] bg-[#FBFCF8] p-4">
+      <div className="grid gap-3 sm:grid-cols-2">
+        {safeImages.map((src, i) => (
+          <button
+            key={src + i}
+            type="button"
+            onClick={() => onImageClick?.(i)}
+            className="group relative overflow-hidden rounded-[22px] bg-white"
+          >
             <img
               src={src}
-              alt={`image ${idx + 1}`}
-              className="h-[520px] w-full object-cover transition group-hover:scale-[1.02]"
-              draggable={false}
+              alt=""
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             />
-            <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/35 to-transparent p-4">
-                <div className="text-sm text-white/90">Открыть</div>
-              </div>
-            </div>
-          </div>
-        </button>
-      ))}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

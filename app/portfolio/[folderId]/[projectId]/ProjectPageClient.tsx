@@ -26,6 +26,7 @@ export default function ProjectPageClient({
 
   const swipeThreshold = 60; // можно 50-80
 
+
   const prevImage = () => {
     setLightboxIndex((i) => (i - 1 + images.length) % images.length);
   };

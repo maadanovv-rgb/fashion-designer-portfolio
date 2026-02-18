@@ -23,6 +23,8 @@ export default function FullscreenViewer({
   const prev = () => setIndex(Math.max(0, index - 1));
   const next = () => setIndex(Math.min(images.length - 1, index + 1));
 
+  
+
   // ESC + стрелки клавиатуры (без свайпа)
   useEffect(() => {
     if (!open) return;
