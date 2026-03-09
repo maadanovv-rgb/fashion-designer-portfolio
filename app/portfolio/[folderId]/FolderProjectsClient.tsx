@@ -62,7 +62,7 @@ export default function FolderProjectsClient({
       <div className="mb-6">
         <div className="flex flex-wrap items-center gap-3">
           <Link
-            href="/#portfolio"
+            href="/#menu"
             className="inline-flex items-center gap-2 rounded-full border border-[#D6DDC8] bg-[#FBFCF8] px-4 py-2 text-sm hover:bg-[#E3E8D9]"
           >
             ← Назад
@@ -139,28 +139,9 @@ export default function FolderProjectsClient({
           </div>
         </div>
 
-        {/* Мобильные кнопки сортировки */}
-        {/* <div className="mt-4 flex sm:hidden gap-2">
-          <Button
-            type="button"
-            variant="outline"
-            className="h-10 flex-1 rounded-full border-[#D6DDC8] bg-[#FBFCF8] hover:bg-[#E3E8D9]"
-            onClick={() => setSort("new")}
-          >
-            Новые
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            className="h-10 flex-1 rounded-full border-[#D6DDC8] bg-[#FBFCF8] hover:bg-[#E3E8D9]"
-            onClick={() => setSort("title")}
-          >
-            A–Я
-          </Button>
-        </div> */}
       </div>
 
-      {/* Grid (как каталог 12storeez) */}
+
       <div className="grid gap-5 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {items.map((p) => {
           const cover = p.images?.[0] || "/portfolio/placeholder.webp";
@@ -237,16 +218,6 @@ export default function FolderProjectsClient({
           <div className="text-lg font-medium">Ничего не найдено</div>
           <div className="mt-2 text-sm text-[#2F3A2E]/70">
             Попробуй изменить запрос поиска.
-          </div>
-          <div className="mt-4">
-            {/* <Button
-              type="button"
-              variant="outline"
-              className="rounded-full border-[#D6DDC8] bg-[#FBFCF8] hover:bg-[#E3E8D9]"
-              onClick={() => setQ("")}
-            >
-              Сбросить поиск
-            </Button> */}
           </div>
         </div>
       ) : null}

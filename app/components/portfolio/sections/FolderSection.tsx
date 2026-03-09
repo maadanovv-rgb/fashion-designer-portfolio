@@ -3,7 +3,7 @@ import { folders } from "../data";
 
 export default function  FoldersSection() {
   return (
-    <section className="mt-10">
+    <section className="mt-10" id="menu">
       <div className="mb-4">
         <h2 className="mt-2 text-2xl font-semibold tracking-tight">Работы</h2>
       </div>
