@@ -126,7 +126,7 @@ export const projects: Project[] = [
   },
   {
     id: "p8",
-    title: "Твидовый жакет",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
   },
   {
     id: "p9",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -149,9 +149,19 @@ export const projects: Project[] = [
     images: ['/portfolio/indevidual1.webp'],
       folderId: "tailoring"
   },
+   {
+    id: "p28",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual19.webp'],
+      folderId: "tailoring"
+  },
   {
     id: "p10",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -161,7 +171,7 @@ export const projects: Project[] = [
   },
   {
     id: "p11",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -171,7 +181,7 @@ export const projects: Project[] = [
   },
   {
     id: "p12",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -181,7 +191,7 @@ export const projects: Project[] = [
   },
   {
     id: "p13",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -191,7 +201,7 @@ export const projects: Project[] = [
   },
   {
     id: "p14",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -201,7 +211,7 @@ export const projects: Project[] = [
   },
   {
     id: "p15",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -211,7 +221,7 @@ export const projects: Project[] = [
   },
   {
     id: "p16",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -221,7 +231,7 @@ export const projects: Project[] = [
   },
   {
     id: "p17",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -231,7 +241,7 @@ export const projects: Project[] = [
   },
   {
     id: "p18",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -241,7 +251,7 @@ export const projects: Project[] = [
   },
   {
     id: "p19",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -251,7 +261,7 @@ export const projects: Project[] = [
   },
   {
     id: "p20",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -261,7 +271,7 @@ export const projects: Project[] = [
   },
   {
     id: "p21",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -271,7 +281,7 @@ export const projects: Project[] = [
   },
   {
     id: "p22",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -281,7 +291,7 @@ export const projects: Project[] = [
   },
   {
     id: "p25",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
@@ -290,8 +300,18 @@ export const projects: Project[] = [
       folderId: "tailoring"
   },
   {
+    id: "p27",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual20.webp'],
+      folderId: "tailoring"
+  },
+  {
     id: "p26",
-    title: "Индивидуальный пошив",
+    title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
     year: "2024",
