@@ -93,21 +93,11 @@ export const projects: Project[] = [
     description: "Разработка принта в соответствии с концепцией темы",
     images: [
       "/portfolio/jurek1.webp",
-      "/portfolio/jurek2.webp"
+      "/portfolio/jurek2.webp",
+      "/portfolio/olen1.webp",
+      "/portfolio/olen2.webp"
     ],
     folderId: "design_prints",
-  },
-  {
-    id: "p5",
-    title: "Эскизы",
-    category: "Эскизы",
-    tags: ["Эскизы"],
-    year: "2024",
-    description: "Разработка принта в соответствии с концепцией темы",
-    images: [
-      "/portfolio/olen1.webp",
-      "/portfolio/olen2.webp"],
-      folderId: "design_prints"
   },
   {
     id: "p6",
@@ -149,5 +139,166 @@ export const projects: Project[] = [
     ],
       folderId: "tailoring"
   },
+  {
+    id: "p9",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual1.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p10",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual2.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p11",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual3.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p12",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual4.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p13",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual5.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p14",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual6.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p15",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual7.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p16",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual8.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p17",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual9.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p18",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual10.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p19",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual11.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p20",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual12.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p21",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual13.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p22",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual14.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p25",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual17.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p26",
+    title: "Индивидуальный пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual18.webp'],
+      folderId: "tailoring"
+  },
+
 ];
 

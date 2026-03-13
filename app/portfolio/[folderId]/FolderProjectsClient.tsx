@@ -59,69 +59,36 @@ export default function FolderProjectsClient({
   return (
     <div>
       {/* Top bar (как каталог) */}
-      <div className="mb-6">
-        <div className="flex flex-wrap items-center gap-3">
+      <div className="sticky top-0 z-30 -mx-4 border-b border-[#D6DDC8] bg-[#F6F7F2]/95 px-4 py-3 backdrop-blur md:static md:mx-0 md:border-0 md:bg-transparent md:px-0 md:py-0">
+        <div className="flex items-center gap-31">
           <Link
-            href="/#menu"
-            className="inline-flex items-center gap-2 rounded-full border border-[#D6DDC8] bg-[#FBFCF8] px-4 py-2 text-sm hover:bg-[#E3E8D9]"
+            href="/#portfolio"
+            className="shrink-0 rounded-full border border-[#D6DDC8] bg-[#FBFCF8] px-4 py-2 text-sm hover:bg-[#E3E8D9]"
           >
             ← Назад
           </Link>
 
-          <div className="ml-auto flex items-center gap-2">
-            <div className="relative w-[240px] max-w-[60vw] md:w-[320px]">
-              <Input
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder="Поиск внутри папки…"
-                className="h-10 rounded-full border-[#D6DDC8] bg-[#FBFCF8] pl-4 pr-10 text-[#2F3A2E] placeholder:text-[#2F3A2E]/40"
-              />
-              {q ? (
-                <button
-                  type="button"
-                  onClick={() => setQ("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#2F3A2E]/45 hover:text-[#2F3A2E]"
-                  aria-label="Очистить"
-                >
-                  ✕
-                </button>
-              ) : null}
-            </div>
-            {/* Десктопн кнопки сортировки */}
-            {/* <div className="hidden sm:flex items-center gap-2">
-              <Button
+          <div className="relative min-w-0 flex-1">
+            <Input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="Поиск..."
+              className="h-11 rounded-full border-[#D6DDC8] bg-[#FBFCF8] pl-4 pr-10 text-[#2F3A2E] placeholder:text-[#2F3A2E]/40"
+            />
+            {q ? (
+              <button
                 type="button"
-                variant="outline"
-                className={`h-10 rounded-full border-[#D6DDC8] bg-[#FBFCF8] hover:bg-[#E3E8D9] ${
-                  sort === "new" ? "ring-1 ring-[#D6DDC8]" : ""
-                }`}
-                onClick={() => setSort("new")}
+                onClick={() => setQ("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#2F3A2E]/45 hover:text-[#2F3A2E]"
+                aria-label="Очистить"
               >
-                Новые
-              </Button>
-              <Button
-                type="button"
-                variant="outline"
-                className={`h-10 rounded-full border-[#D6DDC8] bg-[#FBFCF8] hover:bg-[#E3E8D9] ${
-                  sort === "old" ? "ring-1 ring-[#D6DDC8]" : ""
-                }`}
-                onClick={() => setSort("old")}
-              >
-                Старые
-              </Button>
-              <Button
-                type="button"
-                variant="outline"
-                className={`h-10 rounded-full border-[#D6DDC8] bg-[#FBFCF8] hover:bg-[#E3E8D9] ${
-                  sort === "title" ? "ring-1 ring-[#D6DDC8]" : ""
-                }`}
-                onClick={() => setSort("title")}
-              >
-                A–Я
-              </Button>
-            </div> */}
+                ✕
+              </button>
+            ) : null}
           </div>
         </div>
+      </div>
+      <div className="mb-6">
 
         <div className="mt-6">
           <h1 className="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">
@@ -135,7 +102,6 @@ export default function FolderProjectsClient({
 
           <div className="mt-4 flex items-center gap-2 text-sm text-[#2F3A2E]/60">
             <span>Количество: {items.length}</span>
-            {q ? <span className="ml-2">· поиск: “{q}”</span> : null}
           </div>
         </div>
 
