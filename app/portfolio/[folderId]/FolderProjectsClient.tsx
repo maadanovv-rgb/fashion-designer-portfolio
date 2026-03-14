@@ -62,7 +62,7 @@ export default function FolderProjectsClient({
       <div className="sticky top-0 z-30 -mx-4 border-b border-[#D6DDC8] bg-[#F6F7F2]/95 px-4 py-3 backdrop-blur md:static md:mx-0 md:border-0 md:bg-transparent md:px-0 md:py-0">
         <div className="flex items-center gap-31">
           <Link
-            href="/#portfolio"
+            href="/#menu"
             className="shrink-0 rounded-full border border-[#D6DDC8] bg-[#FBFCF8] px-4 py-2 text-sm hover:bg-[#E3E8D9]"
           >
             ← Назад

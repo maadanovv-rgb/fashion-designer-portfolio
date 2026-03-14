@@ -12,7 +12,7 @@ export const profile: Profile = {
   instagram: "mellsan_12",
   resumeUrl: "/resume/MELLSAN_Resume.pdf",
   about:
-    "Художник-дизайнер с профильным образованием (КРСУ, 2023) и опытом 2,5 года в индивидуальном пошиве. Специализируюсь на разработке художественных эскизов, технических рисунков и декоративной отделке изделий, включая ручную вышивку бисерами. Отлично разбираюсь в тканях, их свойствах и применении в пошиве.",
+    "Художник-дизайнер с профильным образованием (КРСУ, 2023) и опытом 3 года в индивидуальном пошиве. Специализируюсь на разработке художественных эскизов, технических рисунков и декоративной отделке изделий, включая ручную вышивку бисерами. Отлично разбираюсь в тканях, их свойствах и применении в пошиве.",
   specialties: [
     { icon: Shirt, label: "Индивидуальный пошив" },
     { icon: Scissors, label: "Эскизы + техрисунки" },
@@ -53,8 +53,66 @@ export const projects: Project[] = [
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
       "/portfolio/biser1.webp",
+    ],
+    folderId: "handwork",
+  },
+  {
+    id: "p38",
+    title: "Вечернее платье",
+    category: "Вечерние",
+    tags: ["Индивидуальный пошив"],
+    year: "2025",
+    description: "Ручная вышивка с бисерами и стеклянными стразами",
+    images: [
       "/portfolio/biser3.webp",
+    ],
+    folderId: "handwork",
+  },
+  {
+    id: "p39",
+    title: "Вечернее платье",
+    category: "Вечерние",
+    tags: ["Индивидуальный пошив"],
+    year: "2025",
+    description: "Ручная вышивка с бисерами и стеклянными стразами",
+    images: [
       "/portfolio/biser2.webp"
+    ],
+    folderId: "handwork",
+  },
+  {
+    id: "p55",
+    title: "Вечернее платье",
+    category: "Вечерние",
+    tags: ["Индивидуальный пошив"],
+    year: "2025",
+    description: "Ручная вышивка с бисерами и стеклянными стразами",
+    images: [
+      "/portfolio/ruch1.webp"
+    ],
+    folderId: "handwork",
+  },
+  {
+    id: "p56",
+    title: "Вечернее платье",
+    category: "Вечерние",
+    tags: ["Индивидуальный пошив"],
+    year: "2025",
+    description: "Ручная вышивка с бисерами и стеклянными стразами",
+    images: [
+      "/portfolio/ruch2.webp"
+    ],
+    folderId: "handwork",
+  },
+  {
+    id: "p57",
+    title: "Вечернее платье",
+    category: "Вечерние",
+    tags: ["Индивидуальный пошив"],
+    year: "2025",
+    description: "Ручная вышивка с бисерами и стеклянными стразами",
+    images: [
+      "/portfolio/ruch3.webp"
     ],
     folderId: "handwork",
   },
@@ -67,6 +125,17 @@ export const projects: Project[] = [
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
      "/portfolio/etno1.webp",
+    ],
+    folderId: "design_prints",
+  },
+   {
+    id: "p40",
+    title: "Этно-жилет Argyle",
+    category: "Эскизы",
+    tags: ["Эскизы"],
+    year: "2024",
+    description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
+    images: [
      "/portfolio/etno2.webp"
     ],
     folderId: "design_prints",
@@ -80,6 +149,17 @@ export const projects: Project[] = [
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
       "/portfolio/jaket1.webp",
+    ],
+    folderId: "design_prints",
+  },
+  {
+    id: "p41",
+    title: "Этно-жилет Argyle",
+    category: "Эскизы",
+    tags: ["Этно"],
+    year: "2025",
+    description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
+    images: [
       "/portfolio/jaket2.webp"
     ],
     folderId: "design_prints",
@@ -93,23 +173,44 @@ export const projects: Project[] = [
     description: "Разработка принта в соответствии с концепцией темы",
     images: [
       "/portfolio/jurek1.webp",
-      "/portfolio/jurek2.webp",
-      "/portfolio/olen1.webp",
-      "/portfolio/olen2.webp"
     ],
     folderId: "design_prints",
   },
   {
-    id: "p6",
-    title: "Свадебные-эскизы",
+    id: "p42",
+    title: "Сердце",
     category: "Эскизы",
-    tags: ["Свадебные"],
-    year: "2024",
-    description: "Художественные эскизы свадебных нарядов",
+    tags: ["Эскизы"],
+    year: "2023",
+    description: "Разработка принта в соответствии с концепцией темы",
     images: [
-      "/portfolio/svadba1.webp",
-      "/portfolio/svadba2.webp"],
-      folderId: "art_sketch"
+      "/portfolio/jurek2.webp",
+    ],
+    folderId: "design_prints",
+  },
+  {
+    id: "p43",
+    title: "Сердце",
+    category: "Эскизы",
+    tags: ["Эскизы"],
+    year: "2023",
+    description: "Разработка принта в соответствии с концепцией темы",
+    images: [
+      "/portfolio/olen1.webp",
+    ],
+    folderId: "design_prints",
+  },
+  {
+    id: "p44",
+    title: "Сердце",
+    category: "Эскизы",
+    tags: ["Эскизы"],
+    year: "2023",
+    description: "Разработка принта в соответствии с концепцией темы",
+    images: [
+      "/portfolio/olen2.webp"
+    ],
+    folderId: "design_prints",
   },
    {
     id: "p7",
@@ -120,6 +221,17 @@ export const projects: Project[] = [
     description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
     images: [
       "/portfolio/zelen1.webp",
+    ],
+      folderId: "handwork"
+  },
+  {
+    id: "p46",
+    title: "Вечернее платье",
+    category: "Ручная вышивка",
+    tags: ["Ручная вышивка"],
+    year: "2024",
+    description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
+    images: [
       "/portfolio/zelen2.webp",
     ],
       folderId: "handwork"
@@ -129,11 +241,35 @@ export const projects: Project[] = [
     title: "Инд. пошив",
     category: "Индивидуальный пошив",
     tags: ["Индивидуальный пошив"],
-    year: "2024",
+    year: "2024", 
     description: "Индивидуальный пошив твидового жакета",
     images: [
       "/portfolio/tvid1.webp",
+
+    ],
+      folderId: "tailoring"
+  },
+  {
+    id: "p47",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024", 
+    description: "Индивидуальный пошив твидового жакета",
+    images: [
       "/portfolio/tvid2.webp",
+
+    ],
+      folderId: "tailoring"
+  },
+  {
+    id: "p48",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024", 
+    description: "Индивидуальный пошив твидового жакета",
+    images: [
       "/portfolio/tvid3.webp",
 
     ],
@@ -318,6 +454,186 @@ export const projects: Project[] = [
     description: "Индивидуальный пошив",
     images: ['/portfolio/indevidual18.webp'],
       folderId: "tailoring"
+  },
+  {
+    id: "p28",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e1.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p29",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e2.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p30",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e3.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p31",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e4.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p32",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e5.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p33",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e6.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p34",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e7.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p35",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e8.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p36",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e9.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p37",
+    title: "Тех. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/teh-e10.webp'],
+      folderId: "tech_sketch"
+  },
+  {
+    id: "p47",
+    title: "Худ. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/hud-e1.webp'],
+      folderId: "art_sketch"
+  },
+  {
+    id: "p48",
+    title: "Худ. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/hud-e2.webp'],
+      folderId: "art_sketch"
+  },
+  {
+    id: "p49",
+    title: "Худ. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/hud-e3.webp'],
+      folderId: "art_sketch"
+  },
+  {
+    id: "p50",
+    title: "Худ. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/hud-e4.webp'],
+      folderId: "art_sketch"
+  },
+  {
+    id: "p51",
+    title: "Худ. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/hud-e5.webp'],
+      folderId: "art_sketch"
+  },
+  {
+    id: "p52",
+    title: "Худ. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/hud-e6.webp'],
+      folderId: "art_sketch"
+  },
+  {
+    id: "p53",
+    title: "Худ. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/hud-e7.webp'],
+      folderId: "art_sketch"
+  },
+  {
+    id: "p54",
+    title: "Худ. эскиз",
+    category: "Эскиз",
+    tags: ["Эскиз"],
+    year: "2024",
+    description: "Эскиз",
+    images: ['/portfolio/hud-e8.webp'],
+      folderId: "art_sketch"
   },
 
 ];
