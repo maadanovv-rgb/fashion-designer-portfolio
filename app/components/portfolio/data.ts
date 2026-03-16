@@ -760,7 +760,7 @@ export const projects: Project[] = [
     tags: ["Коллекции"],
     year: "2024",
     description: "Коллекции",
-    images: ['/portfolio/collections1.webp'],
+    images: ['/portfolio/collections13.webp'],
       folderId: "collections"
   },
    {
@@ -820,7 +820,7 @@ export const projects: Project[] = [
     tags: ["Коллекции"],
     year: "2024",
     description: "Коллекции",
-    images: ['/portfolio/collections7.webp'],
+    images: ['/portfolio/collections1.webp'],
       folderId: "collections"
   },
    {
@@ -880,7 +880,7 @@ export const projects: Project[] = [
     tags: ["Коллекции"],
     year: "2024",
     description: "Коллекции",
-    images: ['/portfolio/collections13.webp'],
+    images: ['/portfolio/collections7.webp'],
       folderId: "collections"
   },
    {
