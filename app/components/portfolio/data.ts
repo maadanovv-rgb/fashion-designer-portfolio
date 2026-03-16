@@ -48,7 +48,7 @@ export const projects: Project[] = [
     id: "p1",
     title: "Вечернее платье",
     category: "Вечерние",
-    tags: ["Индивидуальный пошив"],
+    tags: ["Ручная вышивка"],
     year: "2025",
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     id: "p38",
     title: "Вечернее платье",
     category: "Вечерние",
-    tags: ["Индивидуальный пошив"],
+    tags: ["Ручная вышивка"],
     year: "2025",
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     id: "p39",
     title: "Вечернее платье",
     category: "Вечерние",
-    tags: ["Индивидуальный пошив"],
+    tags: ["Ручная вышивка"],
     year: "2025",
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     id: "p55",
     title: "Вечернее платье",
     category: "Вечерние",
-    tags: ["Индивидуальный пошив"],
+    tags: ["Ручная вышивка"],
     year: "2025",
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     id: "p56",
     title: "Вечернее платье",
     category: "Вечерние",
-    tags: ["Индивидуальный пошив"],
+    tags: ["Ручная вышивка"],
     year: "2025",
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     id: "p57",
     title: "Вечернее платье",
     category: "Вечерние",
-    tags: ["Индивидуальный пошив"],
+    tags: ["Ручная вышивка"],
     year: "2025",
     description: "Ручная вышивка с бисерами и стеклянными стразами",
     images: [
@@ -233,6 +233,54 @@ export const projects: Project[] = [
     description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
     images: [
       "/portfolio/zelen2.webp",
+    ],
+      folderId: "handwork"
+  },
+  {
+    id: "p58",
+    title: "Ручная вышивка",
+    category: "Ручная вышивка",
+    tags: ["Ручная вышивка"],
+    year: "2024",
+    description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
+    images: [
+      "/portfolio/handmade1.webp",
+    ],
+      folderId: "handwork"
+  },
+  {
+    id: "p59",
+    title: "Ручная вышивка",
+    category: "Ручная вышивка",
+    tags: ["Ручная вышивка"],
+    year: "2024",
+    description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
+    images: [
+      "/portfolio/handmade2.webp",
+    ],
+      folderId: "handwork"
+  },
+  {
+    id: "p60",
+    title: "Ручная вышивка",
+    category: "Ручная вышивка",
+    tags: ["Ручная вышивка"],
+    year: "2024",
+    description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
+    images: [
+      "/portfolio/handmade3.webp",
+    ],
+      folderId: "handwork"
+  },
+  {
+    id: "p61",
+    title: "Ручная вышивка",
+    category: "Ручная вышивка",
+    tags: ["Ручная вышивка"],
+    year: "2024",
+    description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
+    images: [
+      "/portfolio/handmade4.webp",
     ],
       folderId: "handwork"
   },
@@ -634,6 +682,26 @@ export const projects: Project[] = [
     description: "Эскиз",
     images: ['/portfolio/hud-e8.webp'],
       folderId: "art_sketch"
+  },
+  {
+    id: "p56",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual01.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p57",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual02.webp'],
+      folderId: "tailoring"
   },
 
 ];

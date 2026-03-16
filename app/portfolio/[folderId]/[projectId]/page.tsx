@@ -21,7 +21,6 @@ export default async function ProjectPage({
   if (!project) return notFound();
 
   const folderProjects = projects.filter((p) => p.folderId === folderId);
-
   return (
     <ProjectPageClient folder={folder} project={project} folderProjects={folderProjects} />
   );

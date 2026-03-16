@@ -98,7 +98,7 @@ export default function ProjectPageClient({
       <div className="sticky top-0 z-30 border-b border-[#D6DDC8] bg-[#F6F7F2]/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link
-            href={`/portfolio/${folder.id}`}
+            href={`/portfolio/${folder.id}#${project.id}`}
             className="rounded-full border border-[#D6DDC8] bg-white/60 px-3 py-1.5 text-sm hover:bg-[#E3E8D9]"
           >
             ← Назад

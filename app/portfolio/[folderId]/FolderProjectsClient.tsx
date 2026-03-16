@@ -117,7 +117,7 @@ export default function FolderProjectsClient({
               href={`/portfolio/${folderId}/${p.id}`}
               className="group"
             >
-              <div className="overflow-hidden rounded-3xl border border-[#D6DDC8] bg-[#FBFCF8]">
+              <div id={`${p.id}`} className="overflow-hidden rounded-3xl border border-[#D6DDC8] bg-[#FBFCF8]">
                 {/* Фото */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#F1F2ED]">
                   <img
