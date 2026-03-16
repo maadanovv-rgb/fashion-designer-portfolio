@@ -164,11 +164,9 @@ export default function ProjectGallery({
     );
   }
 
-  // --- DESKTOP вариант оставь как у тебя (или сеткой) ---
-  // Если хочешь — сделаем как 12storeez (2 колонки, sticky aside) отдельным шагом.
   return (
     <div className="rounded-[28px] border border-[#D6DDC8] bg-[#FBFCF8] p-4">
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-3 sm:grid-cols-1">
         {safeImages.map((src, i) => (
           <button
             key={src + i}
@@ -179,7 +177,7 @@ export default function ProjectGallery({
             <img
               src={src}
               alt=""
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-200 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </button>
         ))}

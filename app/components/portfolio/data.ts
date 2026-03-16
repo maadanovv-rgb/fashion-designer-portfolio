@@ -118,9 +118,9 @@ export const projects: Project[] = [
   },
   {
     id: "p2",
-    title: "Этно-жилет Argyle",
-    category: "Эскизы",
-    tags: ["Эскизы"],
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
     year: "2024",
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
@@ -130,9 +130,9 @@ export const projects: Project[] = [
   },
    {
     id: "p40",
-    title: "Этно-жилет Argyle",
-    category: "Эскизы",
-    tags: ["Эскизы"],
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
     year: "2024",
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
@@ -142,9 +142,9 @@ export const projects: Project[] = [
   },
   {
     id: "p3",
-    title: "Этно-жилет Argyle",
-    category: "Эскизы",
-    tags: ["Этно"],
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
     year: "2025",
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
@@ -154,9 +154,9 @@ export const projects: Project[] = [
   },
   {
     id: "p41",
-    title: "Этно-жилет Argyle",
-    category: "Эскизы",
-    tags: ["Этно"],
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
     year: "2025",
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
@@ -166,9 +166,9 @@ export const projects: Project[] = [
   },
   {
     id: "p4",
-    title: "Сердце",
-    category: "Эскизы",
-    tags: ["Эскизы"],
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
     year: "2023",
     description: "Разработка принта в соответствии с концепцией темы",
     images: [
@@ -178,9 +178,9 @@ export const projects: Project[] = [
   },
   {
     id: "p42",
-    title: "Сердце",
-    category: "Эскизы",
-    tags: ["Эскизы"],
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
     year: "2023",
     description: "Разработка принта в соответствии с концепцией темы",
     images: [
@@ -190,9 +190,9 @@ export const projects: Project[] = [
   },
   {
     id: "p43",
-    title: "Сердце",
-    category: "Эскизы",
-    tags: ["Эскизы"],
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
     year: "2023",
     description: "Разработка принта в соответствии с концепцией темы",
     images: [
@@ -202,9 +202,9 @@ export const projects: Project[] = [
   },
   {
     id: "p44",
-    title: "Сердце",
-    category: "Эскизы",
-    tags: ["Эскизы"],
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
     year: "2023",
     description: "Разработка принта в соответствии с концепцией темы",
     images: [

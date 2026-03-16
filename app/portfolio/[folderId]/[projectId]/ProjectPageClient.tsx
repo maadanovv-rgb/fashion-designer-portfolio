@@ -126,7 +126,7 @@ export default function ProjectPageClient({
               />
             </div>
 
-            <div className="hidden md:block">
+            <div className="hidden md:block flex">
               <ProjectGallery
                 images={images}
                 variant="desktop"
