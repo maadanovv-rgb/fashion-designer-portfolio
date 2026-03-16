@@ -59,13 +59,6 @@ export function AboutServices({ profile }: { profile: Profile }) {
                 <div className="text-xs">Подбор камней, выкладка по схеме</div>
               </div>
             </div>
-
-            <Button variant="secondary" className="rounded-2xl bg-[#E3E8D9] text-[#2F3A2E] hover:bg-[#D6DDC8]" asChild>
-              <a href={`https://wa.me/+996776068583`}>
-                <Download className="mr-2 h-4 w-4" />
-                Запросить прайс / бриф
-              </a>
-            </Button>
           </CardContent>
         </Card>
       </motion.div>

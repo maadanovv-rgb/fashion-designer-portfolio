@@ -14,10 +14,6 @@ export const profile: Profile = {
   about:
     "Художник-дизайнер с профильным образованием (КРСУ, 2023) и опытом 3 года в индивидуальном пошиве. Специализируюсь на разработке художественных эскизов, технических рисунков и декоративной отделке изделий, включая ручную вышивку бисерами. Отлично разбираюсь в тканях, их свойствах и применении в пошиве.",
   specialties: [
-    { icon: Shirt, label: "Индивидуальный пошив" },
-    { icon: Scissors, label: "Эскизы + техрисунки" },
-    { icon: Gem, label: "Вышивка бисерами" },
-    { icon: Sparkles, label: "Финишная отделка" },
   ],
   
 };
@@ -81,18 +77,6 @@ export const projects: Project[] = [
     folderId: "handwork",
   },
   {
-    id: "p55",
-    title: "Вечернее платье",
-    category: "Вечерние",
-    tags: ["Ручная вышивка"],
-    year: "2025",
-    description: "Ручная вышивка с бисерами и стеклянными стразами",
-    images: [
-      "/portfolio/ruch1.webp"
-    ],
-    folderId: "handwork",
-  },
-  {
     id: "p56",
     title: "Вечернее платье",
     category: "Вечерние",
@@ -137,6 +121,30 @@ export const projects: Project[] = [
     description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
     images: [
      "/portfolio/etno2.webp"
+    ],
+    folderId: "design_prints",
+  },
+   {
+    id: "p62",
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
+    year: "2025",
+    description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
+    images: [
+      "/portfolio/design_prints1.webp",
+    ],
+    folderId: "design_prints",
+  },
+  {
+    id: "p63",
+    title: "Дизайн принтов",
+    category: "Дизайн принтов",
+    tags: ["Дизайн принтов"],
+    year: "2025",
+    description: "Разработка этно эскиза второго слоя одежды в стиле аргайл",
+    images: [
+      "/portfolio/design_prints2.webp",
     ],
     folderId: "design_prints",
   },
@@ -200,6 +208,7 @@ export const projects: Project[] = [
     ],
     folderId: "design_prints",
   },
+  
   {
     id: "p44",
     title: "Дизайн принтов",
@@ -212,6 +221,7 @@ export const projects: Project[] = [
     ],
     folderId: "design_prints",
   },
+  
    {
     id: "p7",
     title: "Вечернее платье",
@@ -244,7 +254,7 @@ export const projects: Project[] = [
     year: "2024",
     description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
     images: [
-      "/portfolio/handmade1.webp",
+      "/portfolio/handmade3.webp",
     ],
       folderId: "handwork"
   },
@@ -268,7 +278,7 @@ export const projects: Project[] = [
     year: "2024",
     description: "Вечернее платье по индивидуальному заказу с ручной вышивкой",
     images: [
-      "/portfolio/handmade3.webp",
+      "/portfolio/handmade1.webp",
     ],
       folderId: "handwork"
   },
@@ -703,6 +713,197 @@ export const projects: Project[] = [
     images: ['/portfolio/indevidual02.webp'],
       folderId: "tailoring"
   },
+   {
+    id: "p70",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual001.webp'],
+      folderId: "tailoring"
+  },
+   {
+    id: "p71",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual002.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p72",
+    title: "Инд. пошив",
+    category: "Индивидуальный пошив",
+    tags: ["Индивидуальный пошив"],
+    year: "2024",
+    description: "Индивидуальный пошив",
+    images: ['/portfolio/indevidual003.webp'],
+      folderId: "tailoring"
+  },
+  {
+    id: "p73",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections01.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p74",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections1.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p75",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections2.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p76",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections3.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p77",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections4.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p78",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections5.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p79",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections6.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p80",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections7.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p81",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections8.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p82",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections9.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p83",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections10.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p84",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections11.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p85",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections12.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p86",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections13.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p87",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections14.webp'],
+      folderId: "collections"
+  },
+   {
+    id: "p88",
+    title: "Коллекции",
+    category: "Коллекции",
+    tags: ["Коллекции"],
+    year: "2024",
+    description: "Коллекции",
+    images: ['/portfolio/collections15.webp'],
+      folderId: "collections"
+  },
+
 
 ];
 
